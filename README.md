@@ -70,7 +70,7 @@ cabal update
 cabal install alex happy
 ```
 
-## Testing your installation
+## Final required step: testing your installation
 
 Since we want to be writing and running tests immediately ("test-driven learning"?), we want to install `doctest`, `hspec`, and `quickcheck`. One great way to do this and verify that your installation is working is to try to run a successful build and test of an excellent starter Haskell project, [`unit-test-example`](https://github.com/kazu-yamamoto/unit-test-example):
 
@@ -78,12 +78,16 @@ Since we want to be writing and running tests immediately ("test-driven learning
 git clone https://github.com/kazu-yamamoto/unit-test-example
 cd unit-test-example
 cabal configure --enable-tests
-cabal install --only-dependencies
+cabal install --enable-tests --only-dependencies
 cabal build
 cabal test
 ```
 
-You don't have to do this right away, but you can read an explanation of what this process does, in the provided [tutorial](https://github.com/kazu-yamamoto/unit-test-example/blob/master/markdown/en/tutorial.md).
+Note that the `cabal install` command will install the dependencies found in the `unit-test-example.cabal` file. **We would like these dependencies installed before the workshop, because you may not have Internet access to pull down dependencies there.**
+
+Your setup is complete for the workshop when `cabal test` succeeds.
+
+If you want to jump ahead before the workshop, you can look at an explanation of what this process does, in the provided [tutorial](https://github.com/kazu-yamamoto/unit-test-example/blob/master/markdown/en/tutorial.md).
 
 ## Questions?
 
