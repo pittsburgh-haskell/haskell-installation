@@ -79,13 +79,13 @@ Since we want to be writing and running tests immediately ("test-driven learning
 ```console
 git clone https://github.com/kazu-yamamoto/unit-test-example
 cd unit-test-example
-cabal configure --enable-tests
 cabal install --enable-tests --only-dependencies
+cabal configure --enable-tests
 cabal build
 cabal test
 ```
 
-Note that the `cabal install` command will install the dependencies found in the `unit-test-example.cabal` file. **We would like these dependencies installed before the workshop, because you may not have Internet access to pull down dependencies there.**
+Note that the `cabal install` command will install the dependencies found in the `unit-test-example.cabal` file. **Ideally, you should run this before the workshop, to save on a flood of WiFi access on site to pull down and build dependencies there.**
 
 Your setup is complete for the workshop when `cabal test` succeeds.
 
