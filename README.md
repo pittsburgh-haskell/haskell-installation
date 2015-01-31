@@ -1,5 +1,7 @@
 # Instructions for installing Haskell
 
+[![Build Status](https://travis-ci.org/pittsburgh-haskell/haskell-installation.png)](https://travis-ci.org/pittsburgh-haskell/haskell-installation)
+
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/pittsburgh-haskell/haskell-installation?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 These instructions are for GHC 7.8.4, and will be kept up to date to the latest released version of GHC.
