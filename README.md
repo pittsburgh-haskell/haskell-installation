@@ -25,6 +25,26 @@ Before following the instructions below, it may be helpful to first understand, 
 
 ## Instructions
 
+### Clean up old stuff first!
+
+If you have old versions of GHC or Cabal installed, you should remove them. We want to install GHC 7.8.3 or 7.8.4, and Cabal 1.20 or 1.22.
+
+Check your versions:
+
+```
+$ ghc --version
+$ cabal --version
+```
+
+Also, if you have old directories created from old versions of GHC or Cabal, wipe out your home directory's repositories:
+
+```
+$ rm -rf ~/.ghc
+$ rm -rf ~/.cabal
+```
+
+This will enable a clean process the next time you use the newer version of Cabal you have installed.
+
 ### Mac OS X
 
 Although it is possible to use a [ZIP archive](http://new-www.haskell.org/downloads/osx) of GHC 7.8.3, I recommend using [Homebrew](http://brew.sh/) if on a Mac post-Lion, in order to get GHC 7.8.4. Do
