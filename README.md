@@ -10,7 +10,7 @@ These instructions are for GHC 7.8.4, and will be kept up to date to the latest 
 
 Why this set of instructions about how to install Haskell on your computer? Isn't the official site for [Haskell](http://haskell.org/) sufficient?
 
-Sadly, right now (January 2015), the answer is *no*, for unfortunate reasons that newcomers should not have had to deal with when getting started. The Haskell community is working to improve the setup process, with a [brand new Web site that has not officially launched yet](http://new-www.haskell.org/), but the information there is not entirely up to date either, although the [download page](http://new-www.haskell.org/downloads) is getting there.
+Sadly, right now (January 2015), the answer is *no*, for unfortunate reasons that newcomers should not have had to deal with when getting started. The Haskell community is working to improve the setup process. The official [download page](http://www.haskell.org/downloads) is still confusing, so I have created a consistent setup process that I feel is best.
 
 I have personally created Haskell setups on Mac OS X, Windows, and Linux (Ubuntu), and have created the following instructions for these platforms.
 
@@ -31,25 +31,46 @@ If you have old versions of GHC or Cabal installed, you should remove them. We w
 
 Check your versions:
 
-```
-$ ghc --version
-$ cabal --version
+```sh
+ghc --version
+cabal --version
 ```
 
 Also, if you have old directories created from old versions of GHC or Cabal, wipe out your home directory's repositories:
 
 ```
-$ rm -rf ~/.ghc
-$ rm -rf ~/.cabal
+rm -rf ~/.ghc
+rm -rf ~/.cabal
 ```
 
 This will enable a clean process the next time you use the newer version of Cabal you have installed.
 
 ### Mac OS X
 
-Although it is possible to use a [ZIP archive](http://new-www.haskell.org/downloads/osx) of GHC 7.8.3, I recommend using [Homebrew](http://brew.sh/) if on a Mac post-Lion, in order to get GHC 7.8.4. Do
+I recommend using [Homebrew](http://brew.sh/) if on a Mac post-Lion, in order to get GHC 7.8.4.
+
+First, make sure that you have XCode command line tools installed (else weird errors happen):
 
 ```console
+$ brew --config | grep CLT
+CLT: 6.1.1.0.1.1416017670
+```
+
+If you have
+
+```console
+CLT: N/A
+```
+
+you need to run
+
+```sh
+xcode-select --install
+```
+
+After verifying that you have XCode command line tools installed, proceed:
+
+```sh
 brew install ghc
 brew install cabal-install
 cabal update
@@ -70,17 +91,17 @@ A Windows installer is available at [minghc](https://github.com/fpco/minghc).
 
 There are 32-bit and 64-bit installers, e.g., for the latest 64-bit version, download and run the installer for [GHC 7.8.4, 64-bit](https://s3.amazonaws.com/download.fpcomplete.com/minghc/minghc-7.8.4-x86_64.exe). This installer also includes pre-built Alex and Happy, so all you have to do is go to a command window and do
 
-```console
+```sh
 cabal update
 ```
 
 ### Linux
 
-Full Linux instructions are [here](http://new-www.haskell.org/downloads/linux). Currently, the instructions are for GHC 7.8.3, but 7.8.4 has been out.
+Full Linux instructions are [here](http://www.haskell.org/downloads/linux). Currently, the instructions are for GHC 7.8.3, but 7.8.4 has been out.
 
 For Ubuntu, for example, do
 
-```console
+```sh
 sudo apt-get update
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:hvr/ghc
@@ -98,7 +119,7 @@ cabal install alex happy
 
 Since we want to be writing and running tests immediately ("test-driven learning"?), we want to install `doctest`, `hspec`, and `quickcheck`. One great way to do this and verify that your installation is working is to try to run a successful build and test of an excellent starter Haskell project, [`unit-test-example`](https://github.com/kazu-yamamoto/unit-test-example):
 
-```console
+```sh
 git clone https://github.com/kazu-yamamoto/unit-test-example
 cd unit-test-example
 cabal install --enable-tests --only-dependencies
