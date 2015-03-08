@@ -19,15 +19,15 @@ I have personally created Haskell setups on Mac OS X, Windows, and Linux (Ubuntu
 Before following the instructions below, it may be helpful to first understand, at a high level, the end goal of the installation process:
 
 - Install the right version of [GHC](http://www.haskell.org/ghc/), the *de facto* standard native compiler and interpreter.
-- Install the right version of [Cabal](http://www.haskell.org/cabal/), the building/packaging tool. Cabal is implemented in Haskell.
-- Initialize use of Cabal, letting it create a directory `.cabal` in your home directory and download the list of packages from [Hackage](http://hackage.haskell.org/), the standard Haskell community package archive.
-- Install, using Cabal, some auxiliary tools, Happy and Alex, which are needed for Cabal to build and install some packages.
+- Install the right version of [`cabal-install`](http://hackage.haskell.org/package/cabal-install), the tool for building and packaging in accordance with the protocols required by the [`Cabal`](http://www.haskell.org/cabal/) library that will come with your GHC. The `cabal-install` executable (hereafter called `cabal`, as it is on the command line) is implemented in Haskell.
+- Initialize use of the `cabal` executable, letting it create a directory `.cabal` in your home directory and download the list of packages from [Hackage](http://hackage.haskell.org/), the standard Haskell community package archive.
+- Install, using `cabal`, some auxiliary tools, Happy and Alex, which are needed for `cabal` to build and install some packages.
 
 ## Instructions
 
 ### Clean up old stuff first!
 
-If you have old versions of GHC or Cabal installed, you should remove them. We want to install GHC 7.8.3 or 7.8.4, and Cabal 1.20 or 1.22.
+If you have old versions of GHC or Cabal installed, you should remove them. We want to install `ghc-7.8.3` or `ghc-7.8.4`, and something in the range of `cabal-1.20` to `cabal-1.22`.
 
 Check your versions:
 
